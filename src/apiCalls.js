@@ -26,6 +26,5 @@ const getAnimes = (url) => {
     })
 }
 
-getAnimes(genres.awardWinning).then(data => console.log(data))
 
 export { genres, getAnimes };
