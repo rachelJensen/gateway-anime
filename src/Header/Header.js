@@ -3,12 +3,12 @@ import NavBar from '../NavBar/NavBar';
 import Hero from '../Hero/Hero';
 
 
-const Header = () => {
+const Header = ({ getAnimesByGenre }) => {
 
   return (
     <header>
       <NavBar />
-      <Hero />
+      <Hero getAnimesByGenre={ getAnimesByGenre }/>
     </header>
   )
 }

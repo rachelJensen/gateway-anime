@@ -1,8 +1,8 @@
 import './Thumbnail.css';
 
-const Thumbnail = () => {
+const Thumbnail = ({ title }) => {
   return (
-    <p>this is a thumbnail</p>
+    <p>{title}</p>
   )
 }
 
