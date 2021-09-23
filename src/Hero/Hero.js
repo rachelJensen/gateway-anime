@@ -4,7 +4,7 @@ import Search from "../Search/Search";
 const Hero = () => {
   return (
     <div className='hero'>
-      <h1>Find your gatewayAnime</h1>
+      <h1>Find your gateway Anime</h1>
       <Search />
     </div>
   )
