@@ -1,22 +1,34 @@
+import React, { useState } from 'react';
 import './Recommendations.css';
 import Thumbnail from '../Thumbnail/Thumbnail';
 import DetailsCard from '../DetailsCard/DetailsCard';
+import { getAnimes } from '../apiCalls'
 
 
 const Recommendations = ({ animes }) => {
+  const [toWatch, setToWatch] = useState([]);
+  const [details, setDetails] = useState(null)
+
+
+  const getDetails = (url) => {
+    getAnimes(url)
+      .then(data => setDetails(data))
+      // .then(data => console.log(details))
+  }
+  
   const titles = animes.map(anime => {
     return (
-      <Thumbnail anime={anime} />
+      <Thumbnail anime={anime} getDetails={getDetails} />
     )
   })
   
   return (
-    <div>
-      <DetailsCard />
+    <main className="main-home">
+      <DetailsCard details={details}/>
       <section className="recs-container">
         {titles}
       </section>  
-    </div>
+    </main>
   )
 }
 

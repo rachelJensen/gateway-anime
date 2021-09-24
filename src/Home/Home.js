@@ -10,17 +10,17 @@ class Home extends Component {
     super();
     this.state = {
       animes: [],
-      selected: ''
+      selected: '',
     }
   }
 
   componentDidMount = () => {
-    this.getAnimesByGenre(genres.awardWinning)
+    this.getAnimesByGenre(genres.awardWinning);
   }
 
   componentDidUpdate = () => {
     if (this.state.selected) {
-      console.log('this is looping')
+      console.log('if this logs more than once I\'m looping')
       this.getAnimesByGenre(genres[this.state.selected])
       this.setState({ selected: '' })
     }
@@ -46,10 +46,8 @@ class Home extends Component {
     return (
     <div>
       <Header getAnimesByGenre={this.getAnimesByGenre} selectGenre={this.selectGenre}/>
-      <main className="main-home">
-        <DetailsCard selected={this.state.selected}/>
-        <Recommendations animes={this.state.animes}/>
-      </main>
+      <Recommendations animes={this.state.animes}/>
+
     </div>
   )}
 }
