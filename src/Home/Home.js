@@ -10,12 +10,20 @@ class Home extends Component {
     super();
     this.state = {
       animes: [],
-      selected: null
+      selected: ''
     }
   }
 
   componentDidMount = () => {
     this.getAnimesByGenre(genres.awardWinning)
+  }
+
+  componentDidUpdate = () => {
+    if (this.state.selected) {
+      console.log('this is looping')
+      this.getAnimesByGenre(genres[this.state.selected])
+      this.setState({ selected: '' })
+    }
   }
 
   addAnimes = (animeData) => {
@@ -25,16 +33,19 @@ class Home extends Component {
   getAnimesByGenre = (genreUrl) => {
     getAnimes(genreUrl)
       .then(data => {
-        // console.log(data.results)
         this.addAnimes(data.results)
       })
       .catch(err => console.log(err))
+  }
+
+  selectGenre = (genre) => {
+    this.setState({ selected: genre })
   }
   
   render = () => {
     return (
     <div>
-      <Header getAnimesByGenre={this.getAnimesByGenre}/>
+      <Header getAnimesByGenre={this.getAnimesByGenre} selectGenre={this.selectGenre}/>
       <main className="main-home">
         <DetailsCard selected={this.state.selected}/>
         <Recommendations animes={this.state.animes}/>
