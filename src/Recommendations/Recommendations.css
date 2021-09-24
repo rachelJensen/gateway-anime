@@ -1,0 +1,4 @@
+.recs-container {
+  display: flex;
+  flex-wrap: wrap;
+}
