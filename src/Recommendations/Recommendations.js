@@ -8,8 +8,6 @@ const Recommendations = ({ animes }) => {
       <div>{anime.title}</div>
     )
   })
-
-  console.log('animes', animes)
   
   return (
     <section className="recs-container">
