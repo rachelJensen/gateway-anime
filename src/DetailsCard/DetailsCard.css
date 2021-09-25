@@ -1,4 +1,8 @@
 .details-card {
-  height: 40vh;
+  width: 30vw;
   border: solid 2px orange;
+}
+
+.details-img {
+  width: 50%;
 }

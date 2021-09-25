@@ -8,12 +8,15 @@ const DetailsCard = ({ details }) => {
   }
 
   const addToSaved = () => {
-    localStorage.setItem(`details.mal_id`, details)
+    localStorage.setItem(`${details.mal_id}`, details)
   }
   
   return (
     <article className="details-card">
-      <p>{details.title}</p>
+      <img className="details-img" src={details.image_url} alt={`${details.title} poster`}/>
+      <h3>{details.title}</h3>
+      <p>{details.synopsis}</p>
+
       <button onClick={addToSaved}>Save</button>
     </article>
   )
