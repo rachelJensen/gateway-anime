@@ -1,0 +1,18 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  margin: .5em;
+  padding: 0em .5em;
+  align-items: flex-start;
+}
+
+.query-container {
+  display: flex;
+  width: 40vw;
+  margin-bottom: 1em;
+}
+
+h2 {
+  /* margin: .2em .5em; */
+  margin: 0 0 .2em 0;
+}

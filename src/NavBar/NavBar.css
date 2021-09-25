@@ -1,4 +1,9 @@
 .navbar {
   color: black;
   border: solid 2px yellow;
+  padding: .5em;
+}
+
+.link {
+  margin: .2em;
 }
