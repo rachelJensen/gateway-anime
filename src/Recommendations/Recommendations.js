@@ -24,7 +24,9 @@ const Recommendations = ({ animes }) => {
   
   return (
     <main className="main-home">
-      <DetailsCard details={details}/>
+      <section className="details-sect">
+        <DetailsCard details={details}/>
+      </section>
       <section className="recs-container">
         {titles}
       </section>  
