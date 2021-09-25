@@ -1,0 +1,9 @@
+.recs-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70vw;
+}
+
+.details-sect {
+  width: 30vw;
+}
