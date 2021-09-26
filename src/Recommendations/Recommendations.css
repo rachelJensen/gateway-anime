@@ -1,9 +1,30 @@
+
+
 .recs-container {
   display: flex;
   flex-wrap: wrap;
-  width: 70vw;
+  /* width: 70vw; */
+  border: solid 2px green;
 }
 
 .details-sect {
-  width: 30vw;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  border: solid 2px pink;
+}
+
+/* for larger screens */
+@media screen and (min-width: 900px) {
+  .main-home {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .details-sect {
+    width: 30vw;
+    align-items:baseline;
+    justify-content: flex-start;
+  }
 }
