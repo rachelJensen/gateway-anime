@@ -28,9 +28,6 @@ class Home extends Component {
 
   addAnimes = (animeData) => {
     const filterAnime = animeData
-      // .filter(anime => {
-      //   return !anime.rated.includes('Rx')
-      // })
       .filter(anime => {
         return !anime.type.includes('OVA', 'ONA', 'Special' )
       })
@@ -54,7 +51,7 @@ class Home extends Component {
   render = () => {
     return (
     <div>
-      <Header getAnimesByGenre={this.getAnimesByGenre} selectGenre={this.selectGenre}/>
+      <Header selectGenre={this.selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
       <Recommendations animes={this.state.animes}/>
     </div>
   )}

@@ -15,7 +15,7 @@ const WatchPage = () => {
 
   return (
     <div>
-      <Header />
+      <Header title="Your Watch List" hasSearch={false}/>
      <section className="to-watch-container">
        {saved}
      </section>
