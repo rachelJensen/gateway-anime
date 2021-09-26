@@ -52,7 +52,7 @@ class Home extends Component {
     return (
     <div>
       <Header selectGenre={this.selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
-      <Recommendations animes={this.state.animes}/>
+      <Recommendations animes={this.state.animes} genre={this.state.selected}/>
     </div>
   )}
 }
