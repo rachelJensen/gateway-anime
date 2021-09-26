@@ -6,9 +6,16 @@ import { getAnimes } from '../apiCalls'
 
 
 const Recommendations = ({ animes }) => {
-  const [toWatch, setToWatch] = useState([]);
   const [details, setDetails] = useState(null)
 
+  // const filterAnime = animes.filter(anime => {
+  //   return !anime.rated.includes('Rx')
+  // }).filter(anime => {
+  //   return !anime.type.includes('OVA', 'ONA', 'Special' )
+  // })
+
+  // console.log(animes)
+  // console.log(filterAnime)
 
   const getDetails = (url) => {
     getAnimes(url)
@@ -25,7 +32,7 @@ const Recommendations = ({ animes }) => {
   return (
     <main className="main-home">
       <section className="details-sect">
-        <DetailsCard details={details}/>
+        {details && <DetailsCard details={details}/>}
       </section>
       <section className="recs-container">
         {titles}
