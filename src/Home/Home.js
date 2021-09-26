@@ -3,7 +3,8 @@ import './Home.css';
 import Header from '../Header/Header';
 import DetailsCard from '../DetailsCard/DetailsCard';
 import Recommendations from '../Recommendations/Recommendations';
-import { genres, getAnimes } from '../apiCalls'
+import { genres, getAnimes } from '../apiCalls';
+import Error from '../Error/Error';
 
 class Home extends Component {
   constructor() {
@@ -11,6 +12,7 @@ class Home extends Component {
     this.state = {
       animes: [],
       selected: '',
+      error: ''
     }
   }
 
@@ -31,7 +33,6 @@ class Home extends Component {
       .filter(anime => {
         return !anime.type.includes('OVA', 'ONA', 'Special' )
       })
-    console.log(filterAnime)
     
     this.setState({ animes: filterAnime })
   }
@@ -41,7 +42,7 @@ class Home extends Component {
       .then(data => {
         this.addAnimes(data.results)
       })
-      .catch(err => console.log(err))
+      .catch(err => this.setState({ error: err.message }))
   }
 
   selectGenre = (genre) => {
@@ -52,7 +53,8 @@ class Home extends Component {
     return (
     <div>
       <Header selectGenre={this.selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
-      <Recommendations animes={this.state.animes} genre={this.state.selected}/>
+      {this.state.error && <Error error={this.state.error}/>}
+      {this.state.animes ? <Recommendations animes={this.state.animes} genre={this.state.selected}/>  : <h2>Page Loading</h2>}
     </div>
   )}
 }

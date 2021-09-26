@@ -1,11 +1,6 @@
 import './DetailsCard.css';
 
 const DetailsCard = ({ details, noSave }) => {
-  if (!details) {
-    details = {title: "nothing selected"}
-  }
-
-
   const addToSaved = () => {
     localStorage.setItem(`${details.mal_id}`, JSON.stringify(details))
   }
