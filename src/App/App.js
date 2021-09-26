@@ -1,5 +1,4 @@
 import './App.css';
-import { genres, getAnimes} from '../apiCalls';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
