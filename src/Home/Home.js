@@ -27,7 +27,16 @@ class Home extends Component {
   }
 
   addAnimes = (animeData) => {
-    this.setState({ animes: animeData })
+    const filterAnime = animeData
+      // .filter(anime => {
+      //   return !anime.rated.includes('Rx')
+      // })
+      .filter(anime => {
+        return !anime.type.includes('OVA', 'ONA', 'Special' )
+      })
+    console.log(filterAnime)
+    
+    this.setState({ animes: filterAnime })
   }
  
   getAnimesByGenre = (genreUrl) => {
@@ -47,7 +56,6 @@ class Home extends Component {
     <div>
       <Header getAnimesByGenre={this.getAnimesByGenre} selectGenre={this.selectGenre}/>
       <Recommendations animes={this.state.animes}/>
-
     </div>
   )}
 }
