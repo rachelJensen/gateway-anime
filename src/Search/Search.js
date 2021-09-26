@@ -19,7 +19,7 @@ const Search = ({ selectGenre }) => {
         <select className="genres" id="selectGenre">
           {genreOptions}
         </select>
-        <button onClick={chooseGenre}>Submit</button>
+        <button className="submit" onClick={chooseGenre}>Submit</button>
       </div>  
     </div>
   )
