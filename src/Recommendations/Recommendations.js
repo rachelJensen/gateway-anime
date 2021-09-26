@@ -6,12 +6,13 @@ import { getAnimes } from '../apiCalls'
 
 
 const Recommendations = ({ animes, genre }) => {
-  const [details, setDetails] = useState(null)
+  const [details, setDetails] = useState(null);
+  const [error, setError] = useState('');
 
   const getDetails = (url) => {
     getAnimes(url)
       .then(data => setDetails(data))
-      // .then(data => console.log(details))
+      .catch(err => setError(err))
   }
   
   const titles = animes.map(anime => {
@@ -23,8 +24,11 @@ const Recommendations = ({ animes, genre }) => {
   
   return (
     <main className="main-home">
-     {details && <section className="details-sect">
+      {details && <section className="details-sect">
         <DetailsCard details={details}/>
+      </section>}
+      {error && <section className="details-sect">
+        <h3>Something went wrong. Please try again</h3>
       </section>}
       <section className="recs-container">
         <h2>{genre}</h2>
