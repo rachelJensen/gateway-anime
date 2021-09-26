@@ -14,11 +14,13 @@ const Search = ({ selectGenre }) => {
   
   return (
     <div className="search-container">
-      <h3>Select a genre</h3>
-      <select className="genres" id="selectGenre">
-        {genreOptions}
-      </select>
-      <button onClick={chooseGenre}>Submit</button>
+      <h2>Select a genre</h2>
+      <div className="query-container">
+        <select className="genres" id="selectGenre">
+          {genreOptions}
+        </select>
+        <button onClick={chooseGenre}>Submit</button>
+      </div>  
     </div>
   )
 }

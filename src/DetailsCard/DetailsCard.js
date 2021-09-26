@@ -1,14 +1,13 @@
 import './DetailsCard.css';
 
 const DetailsCard = ({ details }) => {
-  console.log('details card', details)
-
   if (!details) {
     details = {title: "nothing selected"}
   }
 
+
   const addToSaved = () => {
-    localStorage.setItem(`${details.mal_id}`, details)
+    localStorage.setItem(`${details.mal_id}`, JSON.stringify(details))
   }
   
   return (
@@ -92,3 +91,11 @@ export default DetailsCard;
 // ending_themes: [ ],
 // external_links: [ ]
 // }
+
+    // const savedAnime = {
+    //   mal_id: details.mal_id,
+    //   title: details.title,
+    //   synopsis: details.synopsis,
+    //   image_url: details.image_url,
+    //   type: details.type
+    // }

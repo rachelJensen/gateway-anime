@@ -1,5 +1,6 @@
 .details-card {
-  width: 30vw;
+  height: 300px;
+  width: 240px;
   border: solid 2px orange;
 }
 
