@@ -16,7 +16,7 @@ const Recommendations = ({ animes, genre }) => {
   
   const titles = animes.map(anime => {
     return (
-      <Thumbnail anime={anime} getDetails={getDetails} />
+      <Thumbnail anime={anime} getDetails={getDetails} key={anime.mal_id}/>
     )
   })
   console.log('genre in Recs', genre)
