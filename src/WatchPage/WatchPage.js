@@ -9,14 +9,16 @@ const WatchPage = () => {
      return JSON.parse(localStorage.getItem(key));  
     })
     .map(anime => {
-      return (<DetailsCard details={anime}/>)
+      return (<DetailsCard details={anime} noSave={true}/>)
     })  
 
 
   return (
     <div>
       <Header />
-     {saved}
+     <section className="to-watch-container">
+       {saved}
+     </section>
     </div>
   )
 }
