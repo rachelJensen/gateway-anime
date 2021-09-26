@@ -1,6 +1,6 @@
 import './DetailsCard.css';
 
-const DetailsCard = ({ details }) => {
+const DetailsCard = ({ details, noSave }) => {
   if (!details) {
     details = {title: "nothing selected"}
   }
@@ -12,11 +12,18 @@ const DetailsCard = ({ details }) => {
   
   return (
     <article className="details-card">
-      <img className="details-img" src={details.image_url} alt={`${details.title} poster`}/>
-      <h3>{details.title}</h3>
+      <div className="card-head">
+        <img className="details-img" src={details.image_url} alt={`${details.title} poster`}/>
+        <div>  
+          <h3>{details.title}</h3>
+          <h4>{details.type}</h4>
+          <h4>{details.rating}</h4>
+          <h4>{details.score}</h4>
+        </div>
+      </div>
       <p>{details.synopsis}</p>
 
-      <button onClick={addToSaved}>Save</button>
+      {!noSave && <button onClick={addToSaved}>Save</button>}
     </article>
   )
 }
@@ -92,10 +99,3 @@ export default DetailsCard;
 // external_links: [ ]
 // }
 
-    // const savedAnime = {
-    //   mal_id: details.mal_id,
-    //   title: details.title,
-    //   synopsis: details.synopsis,
-    //   image_url: details.image_url,
-    //   type: details.type
-    // }

@@ -1,9 +1,29 @@
 .details-card {
-  height: 300px;
-  width: 240px;
+  height: 400px;
+  width: 300px;
   border: solid 2px orange;
+  margin: 5px;
 }
 
 .details-img {
-  width: 50%;
+  height: 90px;
+}
+
+h3 {
+  margin: 5px;
+  font-size: 14px;
+}
+
+h4 {
+  
+  margin: 5px;
+  font-size: 12px;
+}
+
+p {
+  font-size: 11px;
+}
+
+.card-head {
+  display: flex;
 }

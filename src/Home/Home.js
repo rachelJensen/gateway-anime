@@ -27,7 +27,13 @@ class Home extends Component {
   }
 
   addAnimes = (animeData) => {
-    this.setState({ animes: animeData })
+    const filterAnime = animeData
+      .filter(anime => {
+        return !anime.type.includes('OVA', 'ONA', 'Special' )
+      })
+    console.log(filterAnime)
+    
+    this.setState({ animes: filterAnime })
   }
  
   getAnimesByGenre = (genreUrl) => {
@@ -45,9 +51,8 @@ class Home extends Component {
   render = () => {
     return (
     <div>
-      <Header getAnimesByGenre={this.getAnimesByGenre} selectGenre={this.selectGenre}/>
-      <Recommendations animes={this.state.animes}/>
-
+      <Header selectGenre={this.selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
+      <Recommendations animes={this.state.animes} genre={this.state.selected}/>
     </div>
   )}
 }

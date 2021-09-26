@@ -5,10 +5,8 @@ import DetailsCard from '../DetailsCard/DetailsCard';
 import { getAnimes } from '../apiCalls'
 
 
-const Recommendations = ({ animes }) => {
-  const [toWatch, setToWatch] = useState([]);
+const Recommendations = ({ animes, genre }) => {
   const [details, setDetails] = useState(null)
-
 
   const getDetails = (url) => {
     getAnimes(url)
@@ -21,13 +19,15 @@ const Recommendations = ({ animes }) => {
       <Thumbnail anime={anime} getDetails={getDetails} />
     )
   })
+  console.log('genre in Recs', genre)
   
   return (
     <main className="main-home">
-      <section className="details-sect">
+     {details && <section className="details-sect">
         <DetailsCard details={details}/>
-      </section>
+      </section>}
       <section className="recs-container">
+        <h2>{genre}</h2>
         {titles}
       </section>  
     </main>

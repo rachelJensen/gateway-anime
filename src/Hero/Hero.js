@@ -1,12 +1,12 @@
 import './Hero.css'
 import Search from "../Search/Search";
 
-const Hero = ({ getAnimesByGenre, selectGenre }) => {
+const Hero = ({ selectGenre, title, hasSearch }) => {
   
   return (
     <div className='hero'>
-      <h1>Find your gateway Anime</h1>
-      <Search selectGenre={selectGenre}/>
+      <h1>{title}</h1>
+      {hasSearch && <Search selectGenre={selectGenre}/>}
     </div>
   )
 }
