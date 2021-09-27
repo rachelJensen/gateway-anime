@@ -1,65 +1,51 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css';
 import Header from '../Header/Header';
-import DetailsCard from '../DetailsCard/DetailsCard';
 import Recommendations from '../Recommendations/Recommendations';
 import { genres, getAnimes } from '../apiCalls';
 import Error from '../Error/Error';
 
-class Home extends Component {
-  constructor() {
-    super();
-    this.state = {
-      animes: [],
-      selected: '',
-      error: ''
-    }
-  }
+const Home = () => {
+  const [animes, setAnimes] = useState([]);
+  const [selected, setSelected] = useState('');
+  const [error, setError] = useState('')
 
-  componentDidMount = () => {
-    this.getAnimesByGenre(genres.awardWinning);
-  }
+  useEffect(() => {
+    getAnimesByGenre(genres.awardWinning)
+  }, []) 
 
-  componentDidUpdate = () => {
-    if (this.state.selected) {
-      console.log('if this logs more than once I\'m looping')
-      this.getAnimesByGenre(genres[this.state.selected])
-      this.setState({ selected: '' })
-    }
-  }
+  useEffect(() => {
+    getAnimesByGenre(genres[selected])
+    setSelected('')
+  }, [selected]) 
 
-  addAnimes = (animeData) => {
+  const addAnimes = (animeData) => {
     const filterAnime = animeData
       .filter(anime => {
         return !anime.type.includes('OVA', 'ONA', 'Special' )
       })
-    
-    this.setState({ animes: filterAnime })
+    setAnimes(filterAnime)
   }
  
-  getAnimesByGenre = (genreUrl) => {
+  const getAnimesByGenre = (genreUrl) => {
     getAnimes(genreUrl)
       .then(data => {
-        this.addAnimes(data.results)
+        addAnimes(data.results)
       })
-      .catch(err => this.setState({ error: err.message }))
+      .catch(err => setError(err.message ))
   }
 
-  selectGenre = (genre) => {
-    this.setState({ selected: genre })
+  const selectGenre = (genre) => {
+    setSelected(genre)
   }
-  
-  render = () => {
-    console.log(this.state.error)
-    console.log(this.state.animes)
 
-    return (
+  return (
     <div>
-      <Header selectGenre={this.selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
-      {this.state.error && <Error error={this.state.error}/>}
-      {this.state.animes ? <Recommendations animes={this.state.animes} genre={this.state.selected}/>  : <h2>Page Loading</h2>}
+      <Header selectGenre={selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
+      {(animes.length === 0 && error) && <Error error={error} />}
+      {animes ? <Recommendations animes={animes} genre={selected}/>  : <h2>Page Loading</h2>}
     </div>
-  )}
+  )
 }
 
 export default Home;

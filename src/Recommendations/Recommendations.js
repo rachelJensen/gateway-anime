@@ -12,7 +12,10 @@ const Recommendations = ({ animes, genre }) => {
   const getDetails = (url) => {
     getAnimes(url)
       .then(data => setDetails(data))
-      .catch(err => setError(err))
+      .catch(err => {
+        setError(err);
+        console.log(error)
+      })
   }
   
   const titles = animes.map(anime => {
@@ -21,15 +24,16 @@ const Recommendations = ({ animes, genre }) => {
     )
   })
 
-  console.log(details)
   return (
     <main className="main-home">
-      {(details && !details.message) && <section className="details-sect">
-        <DetailsCard details={details}/>
-      </section> }
-      {(details && details.message) && <section className="details-sect">
-        <h3>Something went wrong. Please try again</h3>
-      </section>}
+      {(details && !details.message) && 
+        <section className="details-sect">
+          <DetailsCard details={details}/>
+        </section> }
+      {(details && details.message) && 
+        <section className="details-sect">
+          <h3>Something went wrong. Please try again</h3>
+        </section>}
       <section className="recs-container">
         <h2>{genre}</h2>
         {titles}
