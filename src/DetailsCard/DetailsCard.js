@@ -11,14 +11,14 @@ const DetailsCard = ({ details, noSave }) => {
         <img className="details-img" src={details.image_url} alt={`${details.title} poster`}/>
         <div>  
           <h3>{details.title}</h3>
-          <h4>{details.type}</h4>
-          <h4>{details.rating}</h4>
-          <h4>{details.score}</h4>
+          <h4 className="type">{details.type}</h4>
+          <h4 className="rating">{details.rating}</h4>
+          <h4 className="score">{details.score}</h4>
         </div>
       </div>
       <p>{details.synopsis}</p>
 
-      {!noSave && <button onClick={addToSaved}>Save</button>}
+      {!noSave && <button className="save" onClick={addToSaved}>Save</button>}
     </article>
   )
 }
