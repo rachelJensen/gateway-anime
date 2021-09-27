@@ -15,7 +15,6 @@ const Home = () => {
   }, []) 
 
   useEffect(() => {
-    console.log('if this logs more than once I\'m looping')
     getAnimesByGenre(genres[selected])
     setSelected('')
   }, [selected]) 
