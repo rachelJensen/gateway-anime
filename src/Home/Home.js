@@ -24,7 +24,6 @@ const Home = () => {
       .filter(anime => {
         return !anime.type.includes('OVA', 'ONA', 'Special' )
       })
-    
     setAnimes(filterAnime)
   }
  
@@ -43,7 +42,7 @@ const Home = () => {
   return (
     <div>
       <Header selectGenre={selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>
-      {(error && !animes) && <Error error={error}/>}
+      {(animes.length === 0 && error) && <Error error={error} />}
       {animes ? <Recommendations animes={animes} genre={selected}/>  : <h2>Page Loading</h2>}
     </div>
   )
