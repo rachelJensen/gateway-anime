@@ -38,6 +38,9 @@ describe('Home Page',() => {
   it('should display a details card', () => {
     cy.get('.detail-btn').click()
     cy.get('h3').contains('Kamisama Hajimemashita')
+      .get('.type').contains('TV')
+      .get('.rating').contains('PG-13')
+      .get('.score').contains(8.06)
   })
   
   it('should be able to select a new genre and display the new animes', () => {
