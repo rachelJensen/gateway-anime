@@ -18,7 +18,7 @@ const genres = {
 const getAnimes = (url) => {
   return fetch(url)
     .then(res => {
-      if (res.ok) {
+      if (res.status < 400) {
         return res.json();
       } else {
         return Promise.reject(res.status)
