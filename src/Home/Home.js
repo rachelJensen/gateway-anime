@@ -50,6 +50,9 @@ class Home extends Component {
   }
   
   render = () => {
+    console.log(this.state.error)
+    console.log(this.state.animes)
+
     return (
     <div>
       <Header selectGenre={this.selectGenre} title="Find Your Gateway Anime" hasSearch={true}/>

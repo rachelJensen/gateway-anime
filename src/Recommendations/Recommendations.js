@@ -18,7 +18,6 @@ const Recommendations = ({ animes, genre }) => {
           setError(data)
         }
       })
-      // .catch(err => setError(err))
   }
   
   const titles = animes.map(anime => {
