@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../Header/Header';
 import Home from '../Home/Home';
-// import About from '../About/About';
+import About from '../About/About';
 import WatchPage from '../WatchPage/WatchPage';
 import Error from '../Error/Error';
 
@@ -16,7 +16,7 @@ function App() {
         <Home />
       </Route>
       <Route exact path="/about" >
-        {/* <About /> */}
+        <About />
       </Route>
       <Route exact path="/to-watch" >
         <WatchPage />
