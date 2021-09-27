@@ -1,5 +1,5 @@
 # Find Your Gateway Anime
-## An anime recommendation app 
+## An anime recommendation app for adults 
 
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
@@ -15,7 +15,7 @@ The goal of this Mod3 solo [project](https://frontend.turing.edu/projects/module
 
 ## Deployed App 
 
-- [Gateway Anime](https://gateway-anime.herokuapp.com/)
+### [Your Gateway Anime](https://gateway-anime.herokuapp.com/)
 
 ### Learning Goals
 
