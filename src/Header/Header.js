@@ -1,4 +1,5 @@
 import './Header.css';
+import PropTypes from 'prop-types';
 import NavBar from '../NavBar/NavBar';
 import Hero from '../Hero/Hero';
 
@@ -14,3 +15,9 @@ const Header = ({ selectGenre, title, hasSearch }) => {
 }
 
 export default Header;
+
+Header.propTypes = {
+  selectGenre: PropTypes.func,
+  title: PropTypes.string,
+  hasSearch: PropTypes.bool
+};

@@ -1,10 +1,11 @@
 import './Search.css';
+import PropTypes from 'prop-types';
 import { genres } from '../apiCalls';
 
 const Search = ({ selectGenre }) => {
   
   const genreOptions = Object.keys(genres).map(genre => {
-    return (<option id={genre} value={genre}>{genre}</option>)
+    return (<option id={genre} value={genre} key={genre}>{genre}</option>)
   })
 
   const chooseGenre = () => {
@@ -26,3 +27,7 @@ const Search = ({ selectGenre }) => {
 }
 
 export default Search;
+
+Search.propTypes = {
+  selectGenre: PropTypes.func
+};
