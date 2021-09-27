@@ -1,0 +1,37 @@
+{
+  "request_hash": "request:search:b0988823f29e0b8a50b7e7ffb7945f9b1f69a2f2",
+  "request_cached": false,
+  "request_cache_expiry": 432000,
+  "results": [
+    {
+      "mal_id": 227,
+      "url": "https://myanimelist.net/anime/227/FLCL",
+      "image_url": "https://cdn.myanimelist.net/images/anime/7/77356.jpg?s=4c740722edcf938c372197fc31aaa060",
+      "title": "FLCL",
+      "airing": false,
+      "synopsis": "Naota Nandaba is an ordinary sixth grader living in a city where nothing amazing ever seems to happen. After his brother Tasuku leaves town to play baseball in America, Naota takes it upon himself to...",
+      "type": "OVA",
+      "episodes": 6,
+      "score": 8.03,
+      "start_date": "2000-04-26T00:00:00+00:00",
+      "end_date": "2001-03-16T00:00:00+00:00",
+      "members": 678740,
+      "rated": "PG-13"
+    },
+    {
+      "mal_id": 3508,
+      "url": "https://myanimelist.net/anime/3508/Genius_Party",
+      "image_url": "https://cdn.myanimelist.net/images/anime/11/20882.jpg?s=bdea5c656f986c4a6aac09543d47e435",
+      "title": "Genius Party",
+      "airing": false,
+      "synopsis": "A collection of seven individual and unique shorts which range from touching to downright bizarre. With each story different from the last, we encounter monsters going to school, a man who has a hard...",
+      "type": "Movie",
+      "episodes": 7,
+      "score": 7.19,
+      "start_date": "2007-07-07T00:00:00+00:00",
+      "end_date": "2007-07-07T00:00:00+00:00",
+      "members": 32874,
+      "rated": "R+"
+    }
+  ]
+}

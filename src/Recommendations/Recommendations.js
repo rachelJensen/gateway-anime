@@ -20,14 +20,14 @@ const Recommendations = ({ animes, genre }) => {
       <Thumbnail anime={anime} getDetails={getDetails} key={anime.mal_id}/>
     )
   })
-  console.log('genre in Recs', genre)
-  
+
+  console.log(details)
   return (
     <main className="main-home">
-      {details && <section className="details-sect">
+      {(details && !details.message) && <section className="details-sect">
         <DetailsCard details={details}/>
-      </section>}
-      {error && <section className="details-sect">
+      </section> }
+      {(details && details.message) && <section className="details-sect">
         <h3>Something went wrong. Please try again</h3>
       </section>}
       <section className="recs-container">
@@ -39,5 +39,3 @@ const Recommendations = ({ animes, genre }) => {
 }
 
 export default Recommendations;
-
-//https://api.jikan.moe/v3/anime/14713/
