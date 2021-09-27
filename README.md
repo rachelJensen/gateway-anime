@@ -27,6 +27,14 @@ The goal of this Mod3 solo [project](https://frontend.turing.edu/projects/module
 
 ### Technologies Used
 
+- React
+- React Router
+- JavaScript
+- HTML/CSS
+- Cypress Testing
+- RestAPI
+- PropTypes
+
 <p text-align="center"> 
     <img alt="React Badge" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=000&style=flat-square)" />
     <img alt="React Router Badge" src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white&style=flat-square)" />
