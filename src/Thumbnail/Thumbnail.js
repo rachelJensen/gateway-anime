@@ -1,4 +1,5 @@
 import './Thumbnail.css';
+import PropTypes from 'prop-types';
 
 const Thumbnail = ({ anime, getDetails }) => {
   return (
@@ -11,3 +12,8 @@ const Thumbnail = ({ anime, getDetails }) => {
 }
 
 export default Thumbnail;
+
+Thumbnail.propTypes = {
+  getDetails: PropTypes.func,
+  anime: PropTypes.object
+};

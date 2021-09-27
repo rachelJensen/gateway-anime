@@ -19,7 +19,6 @@ const getAnimes = (url) => {
   return fetch(url)
     .then(res => {
       if (res.status < 400) {
-        console.log('good response', `${url}`)
         return res.json();
       } else {
         return Promise.reject(res.status)

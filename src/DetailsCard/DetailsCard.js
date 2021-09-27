@@ -1,4 +1,5 @@
 import './DetailsCard.css';
+import PropTypes from 'prop-types';
 
 const DetailsCard = ({ details, noSave, retrieveSaved }) => {
   const addToSaved = () => {
@@ -30,3 +31,9 @@ const DetailsCard = ({ details, noSave, retrieveSaved }) => {
 }
 
 export default DetailsCard;
+
+DetailsCard.propTypes = {
+  details: PropTypes.object,
+  noSave: PropTypes.bool,
+  retrieveSaved: PropTypes.func
+};

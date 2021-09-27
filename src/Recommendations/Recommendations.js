@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Recommendations.css';
 import Thumbnail from '../Thumbnail/Thumbnail';
 import DetailsCard from '../DetailsCard/DetailsCard';
-import { getAnimes } from '../apiCalls'
+import { getAnimes } from '../apiCalls';
 
 
 const Recommendations = ({ animes, genre }) => {
@@ -43,3 +44,8 @@ const Recommendations = ({ animes, genre }) => {
 }
 
 export default Recommendations;
+
+Recommendations.propTypes = {
+  animes: PropTypes.array,
+  genre: PropTypes.string
+};

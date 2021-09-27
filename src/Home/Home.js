@@ -8,7 +8,7 @@ import Error from '../Error/Error';
 const Home = () => {
   const [animes, setAnimes] = useState([]);
   const [selected, setSelected] = useState('');
-  const [error, setError] = useState('')
+  const [error, setError] = useState('');
 
   useEffect(() => {
     getAnimesByGenre(genres.awardWinning)

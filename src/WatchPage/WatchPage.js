@@ -20,7 +20,7 @@ const WatchPage = () => {
   }
     
   const saved = toWatch.map(anime => {
-    return (<DetailsCard details={anime} noSave={true} retrieveSaved={retrieveSaved}/>)
+    return (<DetailsCard details={anime} noSave={true} retrieveSaved={retrieveSaved} key={anime.mal_id}/>)
   })  
 
   return (

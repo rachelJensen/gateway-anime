@@ -1,4 +1,5 @@
 import './Error.css';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
 
@@ -13,3 +14,7 @@ const Error = ({ error }) => {
 }
 
 export default Error;
+
+Error.propTypes = {
+  error: PropTypes.string
+};

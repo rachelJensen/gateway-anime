@@ -1,4 +1,5 @@
-import './Hero.css'
+import './Hero.css';
+import PropTypes from 'prop-types';
 import Search from "../Search/Search";
 
 const Hero = ({ selectGenre, title, hasSearch }) => {
@@ -12,3 +13,9 @@ const Hero = ({ selectGenre, title, hasSearch }) => {
 }
 
 export default Hero;
+
+Hero.propTypes = {
+  selectGenre: PropTypes.func,
+  title: PropTypes.string,
+  hasSearch: PropTypes.bool
+};
