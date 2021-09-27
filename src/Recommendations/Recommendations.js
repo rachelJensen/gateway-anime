@@ -26,19 +26,22 @@ const Recommendations = ({ animes, genre }) => {
   })
 
   return (
-    <main className="main-home">
-      {(details && !details.message) && 
-        <section className="details-sect">
-          <DetailsCard details={details}/>
-        </section> }
-      {(details && details.message) && 
-        <section className="details-sect">
-          <h3>Something went wrong. Please try again</h3>
-        </section>}
-      <section className="recs-container">
-        <h2>{genre}</h2>
-        {titles}
-      </section>  
+    <main className="main">
+      <h2 className="rec-header">Recommendations</h2>
+      <div className="main-home">
+        {(details && !details.message) && 
+          <section className="details-sect">
+            <DetailsCard details={details}/>
+          </section> }
+        {(details && details.message) && 
+          <section className="details-sect">
+            <h3>Something went wrong. Please try again</h3>
+          </section>}
+        <section className="recs-container">
+          <h2>{genre}</h2>
+          {titles}
+        </section>  
+      </div>
     </main>
   )
 }
