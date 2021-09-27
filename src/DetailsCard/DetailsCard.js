@@ -1,12 +1,13 @@
 import './DetailsCard.css';
 
-const DetailsCard = ({ details, noSave }) => {
+const DetailsCard = ({ details, noSave, retrieveSaved }) => {
   const addToSaved = () => {
     localStorage.setItem(`${details.mal_id}`, JSON.stringify(details))
   }
 
   const deleteCard = (id) => {
     localStorage.removeItem(id)
+    retrieveSaved();
   }
   
   return (
