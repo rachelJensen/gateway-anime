@@ -11,7 +11,7 @@ const Home = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    getAnimesByGenre(genres.awardWinning)
+    getAnimesByGenre(genres['Award Winning'])
   }, []) 
 
   useEffect(() => {
