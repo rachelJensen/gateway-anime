@@ -13,11 +13,12 @@
 
 .thumbnail-title {
   position: absolute;
-  bottom: 30px;
+  bottom: 38px;
+  margin: 0 .6em 0 0;
   padding: .2em;
-  left: .2em;
+  left: .6em;
   z-index: 5;
-  font-size: 14px;
+  font-size: 16px;
   color: #000000;
   background: rgba(225, 225, 225, 0.8);
   border: solid 1px #000000;
@@ -27,7 +28,8 @@
 .detail-btn {
   position: absolute;
   bottom: 10px;
-  left: .5em;
+  left: .6em;
+  font-size: 16px;
 }
 
 @media screen and (min-width: 600px) {

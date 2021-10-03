@@ -24,7 +24,7 @@ const DetailsCard = ({ details, noSave, retrieveSaved }) => {
       </div>
       <p>{details.synopsis}</p>
 
-      {!noSave && <button className="save" onClick={addToSaved}>Save</button>}
+      {!noSave && <button className="save" onClick={addToSaved}>Add to Watch List</button>}
       {noSave && <button className="delete" onClick={() => {deleteCard(details.mal_id)}}>X</button>}
     </article>
   )
