@@ -8,7 +8,8 @@ const Search = ({ selectGenre }) => {
     return (<option id={genre} value={genre} key={genre}>{genre}</option>)
   })
 
-  const chooseGenre = () => {
+  const chooseGenre = (event) => {
+    event.preventDefault();
     const selected = document.getElementById('selectGenre');
     selectGenre(selected.value)
   }
@@ -17,10 +18,9 @@ const Search = ({ selectGenre }) => {
     <div className="search-container">
       <h2>Select a genre</h2>
       <div className="query-container">
-        <select className="genres" id="selectGenre">
+        <select className="genres" id="selectGenre" onChange={chooseGenre}>
           {genreOptions}
         </select>
-        <button className="submit" onClick={chooseGenre}>Submit</button>
       </div>  
     </div>
   )

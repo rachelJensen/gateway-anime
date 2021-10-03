@@ -15,7 +15,6 @@ const WatchPage = () => {
     const saved = keys.map(key => {
        return JSON.parse(localStorage.getItem(key));  
     })
-    console.log('am I looping?')
     setToWatch(saved)
   }
     
