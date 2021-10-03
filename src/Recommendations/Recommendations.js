@@ -12,13 +12,20 @@ const Recommendations = ({ animes, genre }) => {
 
   const getDetails = (url) => {
     getAnimes(url)
-      .then(data => setDetails(data))
+      .then(data => {
+        setDetails(data)
+        returnToTop();
+      })
       .catch(err => {
         setError(err);
-        console.log(error)
       })
   }
-  
+
+  const returnToTop = () => {
+    document.body.scrollTop = 0; 
+    document.documentElement.scrollTop = 0;
+  }  
+
   const titles = animes.map(anime => {
     return (
       <Thumbnail anime={anime} getDetails={getDetails} key={anime.mal_id}/>
