@@ -44,9 +44,10 @@ describe('Home Page',() => {
   })
   
   it('should be able to select a new genre and display the new animes', () => {
-    cy.get('.genres').select('romance')
-    cy.get('.submit').click()
-    cy.get('h4').contains('Akatsuki no Yona')
+    cy.get('select').select('Romance')
+    cy.get('.thumbnail-title').should('be.visible')
+    cy.wait(2000)
+    cy.get('.thumbnail-title').contains("Princess Yona")
   })
 
   it('should have a navigation button to view Watch list', () => {
