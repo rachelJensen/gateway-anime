@@ -1,6 +1,8 @@
 language: node_js
+
 node_js:
   - "node"
+
 notifications:
   email: false
 
@@ -23,7 +25,7 @@ script:
   # start server in the background
   - npm start &
   # run all Cypress tests and record on the dashboard
-  - npm run cypress
+  - npm run cypress:run
   # after all tests finish running we need
   # to kill all background jobs (like "npm start &")
   # this avoids flake in Travis jobs
