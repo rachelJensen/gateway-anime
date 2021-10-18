@@ -17,7 +17,7 @@ The goal of this Mod3 solo [project](https://frontend.turing.edu/projects/module
 
 ### [Your Gateway Anime](https://gateway-anime.herokuapp.com/)
 
-![desktop home](https://user-images.githubusercontent.com/81662051/137779537-bd8ae9b2-ebca-4961-b3da-f9b54f34d78b.png)
+![desktop home](https://user-images.githubusercontent.com/81662051/137780372-507e5cb1-e498-498f-80ef-ad684c733929.png)
 tablet view                   |  mobile view
 :-------------------------:|:-------------------------:
 ![tablet watchlist](https://user-images.githubusercontent.com/81662051/137778936-015ebfe8-37dd-4e1b-bfeb-d47f112a275a.png) | ![get-fit-mobile](https://user-images.githubusercontent.com/81662051/137779985-2789647d-7482-4672-9932-fbaa940be98c.png)
