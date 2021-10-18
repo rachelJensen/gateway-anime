@@ -11,7 +11,7 @@
 
 ## Overview and Project Goals 
 
-The goal of this Mod3 solo [project](https://frontend.turing.edu/projects/module-3/showcase.html) was to create a React app for a niche audience using a Asychronous JavaScript and a third-party API. Your Gateway Anime is a simple anime recommender for the  anime curious adult who likes high quality entertainment. The app allows a user to select a genre and then provides them with a curated list of animes with high ratings that are intended for an older audience. The user can then open individual recommendations to read the anime description, and can save it to a watch list.
+The goal of this Mod3 solo [project](https://frontend.turing.edu/projects/module-3/showcase.html) was to create a React app for a niche audience using a asynchronous JavaScript and a third-party API. Your Gateway Anime is a simple anime recommender for the  anime curious adult who likes high quality entertainment. The app allows a user to select a genre and then provides them with a curated list of animes with high ratings that are intended for an older audience. The user can then open individual recommendations to read the anime description, and can save it to a watch list.
 
 ## Deployed App 
 
