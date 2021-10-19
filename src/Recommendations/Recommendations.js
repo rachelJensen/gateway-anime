@@ -9,11 +9,13 @@ import { getAnimes } from '../apiCalls';
 const Recommendations = ({ animes, genre }) => {
   const [details, setDetails] = useState(null);
   const [error, setError] = useState('');
+  const [canSave, setCanSave] = useState(true);
 
   const getDetails = (url) => {
     getAnimes(url)
       .then(data => {
         setDetails(data)
+        setCanSave(true)
         returnToTop();
       })
       .catch(err => {
@@ -38,7 +40,7 @@ const Recommendations = ({ animes, genre }) => {
       <div className="main-home">
         {(details && !details.message) && 
           <section className="details-sect">
-            <DetailsCard details={details}/>
+            <DetailsCard details={details} canSave={canSave} setCanSave={setCanSave}/>
           </section> }
         {(details && details.message) && 
           <section className="details-sect">
