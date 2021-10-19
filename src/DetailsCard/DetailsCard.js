@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DetailsCard.css';
 import PropTypes from 'prop-types';
 
-const DetailsCard = ({ details, noSave, retrieveSaved }) => {
-  const [saved, setSaved] = useState(false)
-  
+const DetailsCard = ({ details, noSave, retrieveSaved, canSave, setCanSave}) => {
   const addToSaved = () => {
     localStorage.setItem(`${details.mal_id}`, JSON.stringify(details))
-    setSaved(true)
+    setCanSave(false)
   }
 
   const deleteCard = (id) => {
@@ -28,8 +26,8 @@ const DetailsCard = ({ details, noSave, retrieveSaved }) => {
       </div>
       <p>{details.synopsis}</p>
 
-      {saved && <h4>Added to Watch List!</h4>}
-      {(!noSave && !saved) && <button className="save" onClick={addToSaved}>Add to Watch List</button>}
+      {!canSave && <h4>Added to Watch List!</h4>}
+      {(!noSave && canSave) && <button className="save" onClick={addToSaved}>Add to Watch List</button>}
       {noSave && <button className="delete" onClick={() => {deleteCard(details.mal_id)}}>X</button>}
     </article>
   )
